@@ -17,6 +17,8 @@ A fun and lightweight front-end project that displays random dog images using th
 
 ## 📸 Demo
 
+<img src="https://github.com/michelle-burton/quick-tasks-dashboard/blob/60b972be9c9b5d4bc767d1f35364f9fc4b587d97/Quick-Task-Dashboard.png" width="400" />
+
 ![screenshot](screenshot.png) <!-- optional: replace with a real screenshot if you add one -->
 
 ## 🧠 What I Learned
