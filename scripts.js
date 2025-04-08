@@ -3,6 +3,7 @@ const container = document.getElementById('dog-container')
 
 async function handleClick() {
     container.innerHTML = 'Loading...';
+    container.style.background = 'none'; 
 
     try {
         const response = await fetch('https://dog.ceo/api/breeds/image/random');

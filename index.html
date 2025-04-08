@@ -3,18 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dog API Fun</title>
-  <style>
-    body { font-family: sans-serif; text-align: center; padding: 2rem; }
-    img { max-width: 400px; border-radius: 10px; margin-top: 1rem; }
-    button { padding: 0.5rem 1rem; font-size: 1rem; margin-top: 1rem; }
-  </style>
+  <title>🐶 Dog API Fun</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <h1>🐶 Random Dog Viewer</h1>
-  <button id="load-dog">Show Me a Dog!</button>
-  <div id="dog-container"></div>
+<header>
+    <h1>🐶 Dog Viewer</h1>
+  </header>
+  <section>
+        <span>Breed:</span>
+        <input type="text" placeholder="Pomerainian" class="input">
+        <button id="load-dog" class="btn">Show Dog</button>
+        
+        <div id="dog-container"></div>
+        <!-- <button class="fav-btn" data-url="imageURL">💖</button>
+        <button id="load-more" class="btn">Load More</button> -->
+    </section>
+    <section>
+        <!-- <hr>
+        <h3>💖 Favorites</h3> -->
 
+    </section>
   <script src="scripts.js"></script>
 </body>
 </html>
