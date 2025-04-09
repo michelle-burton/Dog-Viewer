@@ -4,26 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>🐶 Dog API Fun</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<header>
+  <header>
     <h1>🐶 Dog Viewer</h1>
   </header>
-  <section>
-        <span>Breed:</span>
-        <input type="text" placeholder="Pomerainian" class="input">
-        <button id="load-dog" class="btn">Show Dog</button>
-        
-        <div id="dog-container"></div>
-        <!-- <button class="fav-btn" data-url="imageURL">💖</button>
-        <button id="load-more" class="btn">Load More</button> -->
+  
+  <main>
+    <section class="search-section">
+      <span>Breed:</span>
+      <input list="breeds" id="breed-input" placeholder="Select or type a breed" class="input">
+      <datalist id="breeds"></datalist>
+      <button id="load-dog" class="btn">Show Dog</button>
     </section>
-    <section>
-        <!-- <hr>
-        <h3>💖 Favorites</h3> -->
 
+    <section class="gallery-section">
+      <h2>Gallery</h2>
+      <div id="gallery" class="gallery-grid"></div>
+      <div id="loading-indicator" class="loading">Loading more dogs...</div>
     </section>
+
+    <section class="favorites-section">
+      <hr>
+      <h2>💖 Favorites</h2>
+      <div id="favorites" class="favorites-grid"></div>
+    </section>
+  </main>
+
   <script src="scripts.js"></script>
 </body>
 </html>

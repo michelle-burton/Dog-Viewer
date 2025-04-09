@@ -1,0 +1,23 @@
+{
+  "name": "dog-viewer",
+  "version": "1.0.0",
+  "description": "A fun and lightweight front-end project that displays random dog images using the [Dog CEO API](https://dog.ceo/dog-api/)",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michelle-burton/Dog-Viewer.git"
+  },
+  "author": "Michelle Burton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michelle-burton/Dog-Viewer/issues"
+  },
+  "homepage": "https://github.com/michelle-burton/Dog-Viewer#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

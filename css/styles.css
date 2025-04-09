@@ -5,52 +5,193 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-    body {  
-        text-align: center; 
-        padding: 2rem; 
-        height: 700px;
-        width:1024px;
-        /* background: url('/img/Dog-Viewer.png') no-repeat center; */
-        background-size: 50%;
-        background-color: #FBF8F7;
-    }
-    header{
-        height: 50px;
-    }
-    section {
-        min-height: 400px;
-    }
-    img { max-width: 400px; border-radius: 10px; margin-top: 1rem; }
-    
-    .btn { 
-        border-radius:  10px;
-        padding: 0.5rem 1rem; 
-        font-size: 1rem; 
-        margin-top: 1rem; 
-        background-color: #586B85;
-        color:white;
-        font-weight: bold;
-    }
 
-    .input {
-        padding: 10px;
-        border: 1px solid #444;
-        border-radius: 5px; 
-    }
+body {  
+    text-align: center; 
+    padding: 2rem; 
+    background-color: #FBF8F7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-    #dog-container {
-        width: 100%;
-        min-height: 300px;
-        background: url('/img/Dog-Viewer-Logo.png') no-repeat center;
-        background-size:30%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 
-    #load-more {
-        color: black;
-        background-color:white;
-    }
+header {
+    height: 50px;
+    margin-bottom: 2rem;
+}
+
+.search-section {
+    margin-bottom: 2rem;
+}
+
+.gallery-section {
+    margin-bottom: 2rem;
+}
+
+.gallery-grid {
+    max-height: 60vh;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    scroll-behavior: smooth;
+}
+
+.gallery-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.gallery-grid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.gallery-grid::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.gallery-grid::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.favorites-section {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid #ddd;
+}
+
+.favorites-section p {
+    color: #666;
+    font-style: italic;
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.dog-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.dog-card:hover {
+    transform: translateY(-5px);
+}
+
+.dog-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in;
+}
+
+.dog-card img.loaded {
+    opacity: 1;
+}
+
+.fav-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+.fav-btn:hover {
+    transform: scale(1.1);
+}
+
+.fav-btn.active {
+    color: red;
+}
+
+.loading {
+    padding: 1rem;
+    color: #666;
+    display: none;
+}
+
+.loading.visible {
+    display: block;
+}
+
+.btn { 
+    border-radius: 10px;
+    padding: 0.5rem 1rem; 
+    font-size: 1rem; 
+    margin-top: 1rem; 
+    background-color: #586B85;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+#dog-container {
+    width: 100%;
+    min-height: 300px;
+    background: url('/img/Dog-Viewer-Logo.png') no-repeat center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#dog-container img {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+#dog-container img.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#load-more {
+    color: black;
+    background-color:white;
+}
 
 
